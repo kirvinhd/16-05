@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center p-3">
+        <h1>Calculadora de IMC</h1>
+    </header>
+    <form>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" onblur="validarFoco(this.id)">
+                    <div id="enombre"></div>
+                    <label class="form-label">Edad</label>
+                    <input type="edad" name="edad" id="edad" class="form-control" onblur="validarFoco(this.id)">
+                    <div id="eedad"></div>
+                    <label class="form-label">Peso</label>
+                    <input type="peso" name="peso" id="peso" class="form-control"
+                        onblur="validarFoco(this.id)" onkeypress="return soloNumeros(event)">
+                    <div id="epeso"></div>
+                    <label class="form-label">Altura</label>
+                    <input type="altura" name="altura" id="altura" class="form-control" onblur="validarFoco(this.id)"
+                        onkeypress="return soloNumeros(event)">
+                    <div id="ealtura"></div>
+                    <label>Sexo</label>
+                    <div>
+                        <input type="radio" class="form-check-input" id="femenino" name="sexo"
+                            onclick="limpiarCheck(this.name)"> Femenino
+                    </div>
+                    <div>
+                        <input type="radio" class="form-check-input" id="masculino" name="sexo"
+                            onclick="limpiarCheck(this.name)"> Masculino
+                    </div>
+                    <div id="esexo"></div>
+                    <div class="mt-2 text-end">
+                        <input type="button" value="Limpiar" class="btn btn-outline-info" onclick="limpiar()">
+                        <input type="button" value="Guardar" class="btn btn-success" onclick="validar()" ondblclick="guardar()">
+                    </div>
+                </div>
+                <div class="col-8">
+                    <table class="table table-bordered text-center" id="tabla">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Peso</th>
+                                <th>Altura</th>
+                                <th>Sexo</th>
+                                <th>IMC</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaNueva"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="utilidades.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
